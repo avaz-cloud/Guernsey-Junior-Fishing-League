@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guernsey Junior Fishing League</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,700;0,9..144,900;1,9..144,600&family=Manrope:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --deep:#0A3B37;
+    --teal:#0F5C55;
+    --sea:#1C7A93;
+    --foam-accent:#7FD8BE;
+    --foam:#F5F1E4;
+    --paper:#FCFAF3;
+    --ink:#0B2E2A;
+    --gold:#DFA24F;
+    --line: rgba(10,59,55,0.18);
+    --shadow: 0 12px 30px rgba(10,59,55,0.14);
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Manrope',sans-serif;
+    color:var(--ink);
+    background:var(--foam);
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces', serif;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    line-height:1.05;
+    margin:0;
+  }
+  .mono{
+    font-family:'Space Mono', monospace;
+  }
+  a{color:inherit;}
+  img{max-width:100%;display:block;}
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 28px;
+  }
+  .eyebrow{
+    font-family:'Space Mono', monospace;
+    text-transform:uppercase;
+    letter-spacing:0.18em;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--sea);
+    display:flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:22px;height:1px;
+    background:var(--sea);
+    display:inline-block;
+  }
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(10,59,55,0.96);
+    backdrop-filter:blur(6px);
+    color:var(--paper);
+  }
+  .navbar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:16px 28px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:19px;
+    color:var(--paper);
+    text-decoration:none;
+  }
+  .brand-mark{
+    width:38px;height:38px;
+    flex-shrink:0;
+  }
+  nav ul{
+    list-style:none;
+    display:flex;
+    gap:30px;
+    margin:0;padding:0;
+    font-size:14.5px;
+    font-weight:600;
+  }
+  nav ul li a{
+    text-decoration:none;
+    color:rgba(252,250,243,0.82);
+    transition:color .2s ease;
+    padding-bottom:2px;
+    border-bottom:1px solid transparent;
+  }
+  nav ul li a:hover{ color:var(--foam-accent); border-color:var(--foam-accent);}
+  .nav-cta{
+    background:var(--gold);
+    color:var(--deep);
+    padding:9px 18px;
+    border-radius:999px;
+    font-size:13.5px;
+    font-weight:700;
+    text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-toggle{display:none;}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    position:relative;
+    background:
+      radial-gradient(1100px 480px at 85% -10%, rgba(127,216,190,0.20), transparent 60%),
+      linear-gradient(180deg,#0A3B37 0%, #0D4842 55%, #0F5C55 100%);
+    color:var(--paper);
+    overflow:hidden;
+    padding:76px 0 0;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:40px;
+    align-items:center;
+    padding-bottom:70px;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 5vw, 4.2rem);
+    margin:18px 0 22px;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--foam-accent);
+    font-weight:600;
+  }
+  .hero p.lede{
+    font-size:18px;
+    line-height:1.6;
+    max-width:520px;
+    color:rgba(252,250,243,0.86);
+    margin-bottom:30px;
+  }
+  .btn-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 24px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:15px;
+    text-decoration:none;
+    transition:transform .18s ease, box-shadow .18s ease;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .btn-primary{
+    background:var(--gold);
+    color:var(--deep);
+    box-shadow:0 10px 24px rgba(223,162,79,0.35);
+  }
+  .btn-ghost{
+    border:1.5px solid rgba(252,250,243,0.5);
+    color:var(--paper);
+  }
+  .btn-ghost:hover{background:rgba(252,250,243,0.08);}
+
+  .hero-stats{
+    display:flex;
+    gap:30px;
+    margin-top:44px;
+    flex-wrap:wrap;
+  }
+  .stat .num{
+    font-family:'Space Mono',monospace;
+    font-size:30px;
+    font-weight:700;
+    color:var(--foam-accent);
+  }
+  .stat .lbl{
+    font-size:12.5px;
+    text-transform:uppercase;
+    letter-spacing:0.1em;
+    color:rgba(252,250,243,0.65);
+  }
+
+  /* hero visual: tide board / catch ticket */
+  .tide-card{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:22px;
+    padding:26px 26px 22px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.35);
+    transform:rotate(2deg);
+    position:relative;
+  }
+  .tide-card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:22px;
+    border:2px dashed rgba(10,59,55,0.25);
+    margin:8px;
+    pointer-events:none;
+  }
+  .tide-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    border-bottom:1.5px dashed var(--line);
+    padding-bottom:14px;
+    margin-bottom:14px;
+  }
+  .tide-head .title{
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:20px;
+  }
+  .tide-head .tag{
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    background:var(--teal);
+    color:var(--paper);
+    padding:4px 9px;
+    border-radius:6px;
+  }
+  .catch-row{
+    display:flex;
+    justify-content:space-between;
+    padding:9px 0;
+    border-bottom:1px dotted var(--line);
+    font-size:14px;
+  }
+  .catch-row:last-of-type{border-bottom:none;}
+  .catch-row .who{font-weight:700;}
+  .catch-row .what{color:var(--sea); font-weight:600;}
+  .catch-row .len{font-family:'Space Mono',monospace; font-weight:700;}
+  .tide-foot{
+    margin-top:16px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .tide-foot .status{
+    font-family:'Space Mono',monospace;
+    font-size:11.5px;
+    color:var(--sea);
+    display:flex;align-items:center;gap:6px;
+  }
+  .tide-foot .status::before{
+    content:"";
+    width:8px;height:8px;
+    border-radius:50%;
+    background:#4CAF7D;
+    display:inline-block;
+    box-shadow:0 0 0 4px rgba(76,175,125,0.25);
+  }
+
+  .wave-divider{
+    display:block;
+    width:100%;
+    line-height:0;
+    margin-top:-2px;
+  }
+
+  /* ---------- SECTION GENERIC ---------- */
+  section{padding:96px 0;}
+  .section-head{
+    max-width:640px;
+    margin-bottom:52px;
+  }
+  .section-head h2{
+    font-size:clamp(1.9rem,3.4vw,2.6rem);
+    margin-top:14px;
+  }
+  .section-head p{
+    font-size:16.5px;
+    line-height:1.65;
+    color:#2C4744;
+    margin-top:16px;
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    background:var(--paper);
+  }
+  .about-grid{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .about-art{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:26px;
+    background:linear-gradient(160deg,#0F5C55, #1C7A93 70%);
+    overflow:hidden;
+  }
+  .about-art svg{width:100%;height:100%;}
+  .about-copy p{
+    font-size:16.5px;
+    line-height:1.75;
+    color:#2C4744;
+    margin-bottom:18px;
+  }
+  .founder-quote{
+    margin-top:22px;
+    padding:20px 22px;
+    background:var(--foam);
+    border-left:4px solid var(--sea);
+    border-radius:0 12px 12px 0;
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:17px;
+    color:var(--deep);
+  }
+  .founder-quote span{
+    display:block;
+    margin-top:10px;
+    font-family:'Manrope',sans-serif;
+    font-style:normal;
+    font-size:13px;
+    font-weight:700;
+    color:var(--sea);
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+
+  .age-pills{
+    display:flex;
+    gap:12px;
+    margin-top:26px;
+    flex-wrap:wrap;
+  }
+  .age-pill{
+    border:1.5px solid var(--line);
+    padding:10px 16px;
+    border-radius:999px;
+    font-size:13.5px;
+    font-weight:700;
+    color:var(--teal);
+    background:#fff;
+  }
+
+  /* ---------- SERVICES ---------- */
+  .services{
+    background:var(--deep);
+    color:var(--paper);
+    position:relative;
+  }
+  .services .section-head p{color:rgba(252,250,243,0.78);}
+  .services .eyebrow{color:var(--foam-accent);}
+  .services .eyebrow::before{background:var(--foam-accent);}
+  .service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+  }
+  .service-card{
+    background:rgba(252,250,243,0.06);
+    border:1px solid rgba(252,250,243,0.14);
+    border-radius:18px;
+    padding:30px 26px;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .service-card:hover{
+    transform:translateY(-6px);
+    background:rgba(252,250,243,0.1);
+  }
+  .service-icon{
+    width:46px;height:46px;
+    margin-bottom:18px;
+  }
+  .service-card h3{
+    font-size:19px;
+    margin-bottom:10px;
+    color:var(--paper);
+  }
+  .service-card p{
+    font-size:14.5px;
+    line-height:1.6;
+    color:rgba(252,250,243,0.72);
+    margin:0;
+  }
+  .service-card .tag{
+    display:inline-block;
+    margin-top:16px;
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    color:var(--gold);
+    border:1px solid rgba(223,162,79,0.4);
+    padding:3px 9px;
+    border-radius:6px;
+  }
+
+  /* ---------- HOW IT WORKS ---------- */
+  .how{background:var(--foam);}
+  .how-list{
+    counter-reset:step;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:22px;
+  }
+  .how-item{
+    position:relative;
+    padding-top:44px;
+  }
+  .how-item::before{
+    counter-increment:step;
+    content:counter(step);
+    font-family:'Space Mono',monospace;
+    font-weight:700;
+    font-size:15px;
+    color:var(--paper);
+    background:var(--sea);
+    width:34px;height:34px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:absolute;
+    top:0; left:0;
+  }
+  .how-item h3{
+    font-size:17.5px;
+    margin-bottom:8px;
+    font-family:'Fraunces',serif;
+    font-weight:700;
+  }
+  .how-item p{
+    font-size:14.5px;
+    line-height:1.6;
+    color:#2C4744;
+    margin:0;
+  }
+  .how-item:not(:last-child){
+    border-right:1px dashed var(--line);
+    padding-right:22px;
+  }
+
+  /* ---------- WINNERS ---------- */
+  .winners{background:var(--paper);}
+  .winners .section-head{display:flex; align-items:flex-end; justify-content:space-between; max-width:none; gap:24px; flex-wrap:wrap;}
+  .winners .section-head .copy{max-width:600px;}
+  .season-tag{
+    font-family:'Space Mono',monospace;
+    font-size:12.5px;
+    color:var(--teal);
+    border:1px solid var(--line);
+    padding:8px 14px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .ticket-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:26px;
+  }
+  .ticket{
+    background:#fff;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    overflow:hidden;
+    position:relative;
+  }
+  .ticket-photo{
+    height:170px;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .ticket-photo svg{width:76px;height:76px;}
+  .ticket-photo .badge{
+    position:absolute;
+    top:12px; right:12px;
+    background:var(--gold);
+    color:var(--deep);
+    font-family:'Space Mono',monospace;
+    font-size:11px;
+    font-weight:700;
+    padding:5px 10px;
+    border-radius:999px;
+  }
+  .ticket-perf{
+    height:0;
+    border-top:2px dashed rgba(10,59,55,0.22);
+    position:relative;
+    margin:0 18px;
+  }
+  .ticket-perf::before,.ticket-perf::after{
+    content:"";
+    position:absolute;
+    top:-9px;
+    width:18px;height:18px;
+    background:var(--foam);
+    border-radius:50%;
+  }
+  .ticket-perf::before{left:-27px;}
+  .ticket-perf::after{right:-27px;}
+  .ticket-body{padding:20px 22px 24px;}
+  .ticket-body .name{
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:19px;
+    margin-bottom:4px;
+  }
+  .ticket-body .cat{
+    font-size:12.5px;
+    color:var(--sea);
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:14px;
+  }
+  .ticket-stats{
+    display:flex;
+    justify-content:space-between;
+    font-family:'Space Mono',monospace;
+    font-size:13px;
+    color:var(--ink);
+    border-top:1px dotted var(--line);
+    padding-top:12px;
+  }
+  .ticket-stats div span{
+    display:block;
+    font-size:10.5px;
+    color:#6b8280;
+    font-family:'Manrope',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+  }
+
+  /* ---------- JOIN / CONTACT ---------- */
+  .join{
+    background:linear-gradient(160deg,#0F5C55,#1C7A93);
+    color:var(--paper);
+    position:relative;
+    overflow:hidden;
+  }
+  .join-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:50px;
+    align-items:center;
+  }
+  .join h2{font-size:clamp(1.9rem,3.6vw,2.7rem); margin-top:14px;}
+  .join p{
+    font-size:16.5px;
+    line-height:1.7;
+    color:rgba(252,250,243,0.88);
+    max-width:480px;
+    margin-top:16px;
+  }
+  .join-card{
+    background:var(--paper);
+    color:var(--ink);
+    border-radius:20px;
+    padding:32px;
+    box-shadow:0 24px 50px rgba(0,0,0,0.25);
+  }
+  .join-card h3{
+    font-family:'Fraunces',serif;
+    font-size:20px;
+    margin-bottom:6px;
+  }
+  .join-card p.small{
+    font-size:13.5px;
+    color:#4c6663;
+    margin:0 0 20px;
+  }
+  .join-fact{
+    display:flex;
+    gap:14px;
+    padding:13px 0;
+    border-bottom:1px dotted var(--line);
+    align-items:flex-start;
+  }
+  .join-fact:last-of-type{border-bottom:none;}
+  .join-fact svg{width:20px;height:20px; flex-shrink:0; margin-top:2px; color:var(--sea);}
+  .join-fact .t{font-weight:700; font-size:14.5px;}
+  .join-fact .d{font-size:13px; color:#4c6663;}
+  .join-card .btn-primary{
+    width:100%;
+    justify-content:center;
+    margin-top:20px;
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--deep);
+    color:rgba(252,250,243,0.75);
+    padding:50px 0 30px;
+    font-size:13.5px;
+  }
+  .foot-grid{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:30px;
+    padding-bottom:30px;
+    border-bottom:1px solid rgba(252,250,243,0.14);
+  }
+  .foot-brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    color:var(--paper);
+    font-family:'Fraunces',serif;
+    font-weight:800;
+    font-size:18px;
+  }
+  .foot-brand svg{width:32px;height:32px;}
+  .foot-links{
+    display:flex;
+    gap:60px;
+    flex-wrap:wrap;
+  }
+  .foot-col h4{
+    font-family:'Space Mono',monospace;
+    text-transform:uppercase;
+    font-size:11.5px;
+    letter-spacing:0.1em;
+    color:var(--foam-accent);
+    margin-bottom:14px;
+  }
+  .foot-col a{
+    display:block;
+    text-decoration:none;
+    color:rgba(252,250,243,0.75);
+    margin-bottom:9px;
+    font-size:13.5px;
+  }
+  .foot-col a:hover{color:var(--paper);}
+  .foot-bottom{
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:10px;
+    padding-top:22px;
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:960px){
+    nav ul{display:none;}
+    .hero-grid, .about-grid, .join-grid{grid-template-columns:1fr;}
+    .about-art{order:-1; max-width:340px; margin:0 auto;}
+    .service-grid{grid-template-columns:repeat(2,1fr);}
+    .how-list{grid-template-columns:repeat(2,1fr);}
+    .how-item:nth-child(2n)::after{display:none;}
+    .how-item{border-right:none !important;}
+    .ticket-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:600px){
+    .service-grid{grid-template-columns:1fr;}
+    .how-list{grid-template-columns:1fr;}
+    .hero-stats{gap:22px;}
+    section{padding:64px 0;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    *{transition:none !important; animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="navbar">
+    <a href="#" class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="23" fill="#0F5C55" stroke="#7FD8BE" stroke-width="1.5"/>
+        <path d="M6 26c6-9 30-9 36 0-6 6-30 6-36 0Z" fill="#1C7A93"/>
+        <path d="M6 26c6 5 30 5 36 0" stroke="#7FD8BE" stroke-width="1.2" fill="none"/>
+        <circle cx="14" cy="24" r="1.6" fill="#F5F1E4"/>
+        <path d="M36 26l7-4-7-4v8Z" fill="#7FD8BE"/>
+      </svg>
+      Guernsey Junior Fishing League
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">What's On Offer</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#winners">Winners</a></li>
+        <li><a href="#join">Join Us</a></li>
+      </ul>
+    </nav>
+    <a href="https://www.facebook.com/profile.php?id=61570049143039" class="nav-cta" target="_blank" rel="noopener">Facebook Page</a>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">FREE JUNIOR SEA FISHING · UNDER 16 · RUN BY JUNIORS</div>
+      <h1>Lines in. Friends<br>gathered. <em>Personal bests</em><br>on the line.</h1>
+      <p class="lede">The official home of Guernsey's junior sea fishing competitions — organised by juniors, for juniors. Fish for fun, fish for glory, weigh in with your mates, and see your name on the board.</p>
+      <div class="btn-row">
+        <a href="#join" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0A3B37" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Join The Next Weigh-In
+        </a>
+        <a href="#about" class="btn btn-ghost">How it started</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="num">55+</div><div class="lbl">Members &amp; growing</div></div>
+        <div class="stat"><div class="num">£0</div><div class="lbl">Always free to enter</div></div>
+        <div class="stat"><div class="num">12–16</div><div class="lbl">Junior age range</div></div>
+        <div class="stat"><div class="num">Fri–Sun</div><div class="lbl">Every catch window</div></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="tide-card">
+        <div class="tide-head">
+          <div>
+            <div class="title">Weekend Weigh-In</div>
+            <div class="mono" style="font-size:11.5px;color:#6b8280;margin-top:2px;">Fri 4PM — Sun 9PM · Island-wide</div>
+          </div>
+          <div class="tag">LIVE BOARD</div>
+        </div>
+        <div class="catch-row"><span class="who">H. Zunino</span><span class="what">Bass</span><span class="len">46.2cm</span></div>
+        <div class="catch-row"><span class="who">N. Garrick</span><span class="what">Wrasse</span><span class="len">31.8cm</span></div>
+        <div class="catch-row"><span class="who">T. Gardiner</span><span class="what">Mackerel</span><span class="len">29.4cm</span></div>
+        <div class="catch-row"><span class="who">N. Croft</span><span class="what">Pollock</span><span class="len">37.1cm</span></div>
+        <div class="tide-foot">
+          <div class="status">Entries open</div>
+          <div class="mono" style="font-size:11px;color:#6b8280;">#GJFL</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none">
+    <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,45 L1440,90 L0,90 Z" fill="#F5F1E4"></path>
+  </svg>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-art">
+      <svg viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#1C7A93"/>
+            <stop offset="100%" stop-color="#0A3B37"/>
+          </linearGradient>
+        </defs>
+        <rect width="400" height="500" fill="url(#seaGrad)"/>
+        <path d="M0 340 C 80 300 140 380 220 340 C 300 300 340 360 400 330 L400 500 L0 500 Z" fill="#0F5C55" opacity="0.8"/>
+        <path d="M0 390 C 90 360 160 420 240 385 C 310 355 350 400 400 380 L400 500 L0 500 Z" fill="#0A3B37"/>
+        <circle cx="320" cy="80" r="46" fill="#F5F1E4" opacity="0.9"/>
+        <g opacity="0.5" stroke="#7FD8BE" stroke-width="2" fill="none">
+          <path d="M40 150 q20 -14 40 0"/>
+          <path d="M60 170 q20 -14 40 0"/>
+          <path d="M120 130 q20 -14 40 0"/>
+        </g>
+        <g transform="translate(150,230)">
+          <path d="M0 20 C 20 -10 60 -10 90 10 C 60 30 20 30 0 20 Z" fill="#7FD8BE"/>
+          <path d="M-18 20 L0 8 L0 32 Z" fill="#7FD8BE"/>
+          <circle cx="70" cy="14" r="3" fill="#0A3B37"/>
+        </g>
+      </svg>
+    </div>
+    <div class="about-copy">
+      <div class="eyebrow" style="color:var(--sea);">OUR STORY</div>
+      <h2 style="margin-top:14px;">Started by a 12-year-old with a rod and a group chat.</h2>
+      <p>The Guernsey Junior Fishing League began the way most good ideas do — with a few friends heading down to the coast, comparing catches, and wondering who'd landed the biggest fish that weekend. Word spread from friend to friend, and what started as a small group has grown into an island-wide league of young anglers.</p>
+      <p>Every competition is entirely free to enter and run by the juniors themselves — no adults calling the shots, just young anglers organising fair, friendly competition for their own community. Whether you're chasing a personal best or just want an excuse to get outdoors with your mates, there's a place for you on the rocks.</p>
+      <div class="founder-quote">
+        "At the start, I just reached out to a few friends. They told their friends, and it grew from there."
+        <span>— Herbie Zunino, Founder, age 12</span>
+      </div>
+      <div class="age-pills">
+        <span class="age-pill">Under 12s fish with an adult</span>
+        <span class="age-pill">12–16 fish independently</span>
+        <span class="age-pill">All skill levels welcome</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SERVICES ================= -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">WHAT'S ON OFFER</div>
+      <h2>Everything you need, nothing you pay for.</h2>
+      <p>From your first entry to your first trophy, here's what being part of the league gets you.</p>
+    </div>
+    <div class="service-grid">
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none"><path d="M6 30c8-11 34-11 42 0-8 7-34 7-42 0Z" fill="#7FD8BE"/><path d="M32 30l10-6-10-6v12Z" fill="#DFA24F"/><circle cx="16" cy="28" r="2" fill="#0A3B37"/></svg>
+        <h3>Free Sea Competitions</h3>
+        <p>Regular junior sea fishing competitions held almost every weekend around the island — always free to enter, always open to new members.</p>
+        <span class="tag">FRI 4PM – SUN 9PM</span>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none"><circle cx="16" cy="18" r="7" fill="#7FD8BE"/><circle cx="32" cy="18" r="7" fill="#1C7A93"/><path d="M6 40c0-8 8-13 18-13s18 5 18 13" fill="#0F5C55"/></svg>
+        <h3>Group Entries</h3>
+        <p>Fish solo or gather your mates into a group — enter together, weigh in together, and see how your crew stacks up on the league table.</p>
+        <span class="tag">ANY GROUP SIZE</span>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none"><rect x="9" y="9" width="30" height="30" rx="4" fill="#7FD8BE"/><path d="M16 24l6 6 12-14" stroke="#0A3B37" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        <h3>Official Membership Cards</h3>
+        <p>Every registered member receives a league membership card, marking you as an official part of the Guernsey Junior Fishing League.</p>
+        <span class="tag">FREE ON SIGN-UP</span>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none"><path d="M24 6l4 10 11 1-8 8 2 11-9-6-9 6 2-11-8-8 11-1z" fill="#DFA24F"/></svg>
+        <h3>Prizes For Every Category</h3>
+        <p>Win by species, by size, by group, or by most-improved catch. Prizes are spread across categories so everyone has something to aim for.</p>
+        <span class="tag">MULTIPLE CATEGORIES</span>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none"><path d="M8 14h32v20H8z" fill="#1C7A93"/><path d="M8 14l16 12 16-12" stroke="#F5F1E4" stroke-width="2.5" fill="none"/></svg>
+        <h3>Results Every Weekend</h3>
+        <p>Catches from anywhere around the island between Friday afternoon and Sunday evening are logged and posted to the league board.</p>
+        <span class="tag">ISLAND-WIDE</span>
+      </div>
+
+      <div class="service-card">
+        <svg class="service-icon" viewBox="0 0 48 48" fill="none"><path d="M24 4c9 8 15 16 15 24a15 15 0 1 1-30 0c0-8 6-16 15-24Z" fill="#7FD8BE"/></svg>
+        <h3>A Community, Not Just A League</h3>
+        <p>Run by juniors, for juniors — a friendly space to swap tips, share your best catches and make new fishing mates along the coastline.</p>
+        <span class="tag">JUNIOR-LED</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">GETTING INVOLVED</div>
+      <h2>How a weekend competition works</h2>
+      <p>No entry forms, no fees — just turn up, fish fair, and log your catch.</p>
+    </div>
+    <div class="how-list">
+      <div class="how-item">
+        <h3>Sign up free</h3>
+        <p>Register once to get your league membership card. No cost, no catch — just your name on the roster.</p>
+      </div>
+      <div class="how-item">
+        <h3>Fish the window</h3>
+        <p>Catches count from 4pm Friday to 9pm Sunday, from anywhere around Guernsey's coastline.</p>
+      </div>
+      <div class="how-item">
+        <h3>Log your catch</h3>
+        <p>Submit your species and measurement — solo or as part of your group — before the window closes.</p>
+      </div>
+      <div class="how-item">
+        <h3>Watch the board</h3>
+        <p>Results are posted after each competition, with winners called out across every prize category.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WINNERS ================= -->
+<section class="winners" id="winners">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="copy">
+        <div class="eyebrow">HALL OF FAME</div>
+        <h2>Recent winners &amp; personal bests</h2>
+      </div>
+      <div class="season-tag">CURRENT SEASON</div>
+    </div>
+
+    <div class="ticket-grid">
+
+      <div class="ticket">
+        <div class="ticket-photo" style="background:linear-gradient(160deg,#1C7A93,#0A3B37);">
+          <div class="badge">1ST · BASS</div>
+          <svg viewBox="0 0 64 64" fill="none"><path d="M4 32c14-16 46-16 60 0-14 14-46 14-60 0Z" fill="#F5F1E4"/><circle cx="16" cy="30" r="2.4" fill="#0A3B37"/><path d="M50 32l10-6-10-6v12Z" fill="#DFA24F"/></svg>
+        </div>
+        <div class="ticket-perf"></div>
+        <div class="ticket-body">
+          <div class="name">Biggest Bass</div>
+          <div class="cat">Solo Category</div>
+          <div class="ticket-stats">
+            <div><span>Length</span>46.2cm</div>
+            <div><span>Weigh-in</span>Wk 24</div>
+            <div><span>Group</span>Solo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-photo" style="background:linear-gradient(160deg,#7FD8BE,#0F5C55);">
+          <div class="badge">1ST · GROUP</div>
+          <svg viewBox="0 0 64 64" fill="none"><circle cx="20" cy="24" r="9" fill="#0A3B37"/><circle cx="44" cy="24" r="9" fill="#F5F1E4"/><path d="M6 54c0-11 10-18 26-18s26 7 26 18" fill="#0A3B37"/></svg>
+        </div>
+        <div class="ticket-perf"></div>
+        <div class="ticket-body">
+          <div class="name">The Rockpool Crew</div>
+          <div class="cat">Group Category</div>
+          <div class="ticket-stats">
+            <div><span>Total</span>184.6cm</div>
+            <div><span>Weigh-in</span>Wk 24</div>
+            <div><span>Members</span>4</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ticket">
+        <div class="ticket-photo" style="background:linear-gradient(160deg,#0F5C55,#1C7A93);">
+          <div class="badge">MOST IMPROVED</div>
+          <svg viewBox="0 0 64 64" fill="none"><path d="M8 48l14-16 10 10 22-26" stroke="#F5F1E4" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><path d="M44 16h10v10" stroke="#DFA24F" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+        </div>
+        <div class="ticket-perf"></div>
+        <div class="ticket-body">
+          <div class="name">Most Improved Angler</div>
+          <div class="cat">Junior Category</div>
+          <div class="ticket-stats">
+            <div><span>Growth</span>+18cm PB</div>
+            <div><span>Weigh-in</span>Wk 24</div>
+            <div><span>Age</span>13</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= JOIN / CONTACT ================= -->
+<section class="join" id="join">
+  <div class="wrap join-grid">
+    <div>
+      <div class="eyebrow" style="color:var(--foam-accent);">JOIN THE LEAGUE</div>
+      <h2>Grab a rod, grab your mates, and get on the board.</h2>
+      <p>It costs nothing to join and nothing to compete. Follow our Facebook page for the next weigh-in window, entry details and results from around the island.</p>
+      <div class="btn-row" style="margin-top:26px;">
+        <a href="https://www.facebook.com/profile.php?id=61570049143039" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 4h-2a4 4 0 0 0-4 4v2H7v3h2v7h3v-7h2.5l.5-3H12V8a1 1 0 0 1 1-1h2V4Z" fill="#0A3B37"/></svg>
+          Follow on Facebook
+        </a>
+      </div>
+    </div>
+
+    <div class="join-card">
+      <h3>Before your first weigh-in</h3>
+      <p class="small">A few quick facts to get you started.</p>
+
+      <div class="join-fact">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 20 12 16.5 6.5 20 8 13.5 3 9l6.5-.5L12 2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        <div><div class="t">Ages 12–16 fish independently</div><div class="d">Anglers under 12 are welcome, fishing alongside an adult.</div></div>
+      </div>
+      <div class="join-fact">
+        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        <div><div class="t">Friday 4pm – Sunday 9pm</div><div class="d">This is the catch window for every weekend competition.</div></div>
+      </div>
+      <div class="join-fact">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 12l4-4M3 12l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="t">Anywhere around the island</div><div class="d">Fish your favourite spot — shore, rocks or harbour.</div></div>
+      </div>
+      <div class="join-fact">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <div><div class="t">100% free, always</div><div class="d">No entry fee, no membership cost — just turn up and fish.</div></div>
+      </div>
+
+      <a href="https://www.facebook.com/profile.php?id=61570049143039" target="_blank" rel="noopener" class="btn btn-primary">Message Us On Facebook</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="23" fill="#0F5C55" stroke="#7FD8BE" stroke-width="1.5"/><path d="M6 26c6-9 30-9 36 0-6 6-30 6-36 0Z" fill="#1C7A93"/><path d="M36 26l7-4-7-4v8Z" fill="#7FD8BE"/></svg>
+        Guernsey Junior Fishing League
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Explore</h4>
+          <a href="#about">About Us</a>
+          <a href="#services">What's On Offer</a>
+          <a href="#how">How It Works</a>
+          <a href="#winners">Winners</a>
+        </div>
+        <div class="foot-col">
+          <h4>Connect</h4>
+          <a href="https://www.facebook.com/profile.php?id=61570049143039" target="_blank" rel="noopener">Facebook Page</a>
+          <a href="#join">Join The League</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Guernsey Junior Fishing League. Organised by juniors, for juniors.</span>
+      <span>Free to join · Free to enter · Every weekend</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

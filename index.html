@@ -679,6 +679,116 @@
   @media (prefers-reduced-motion:reduce){
     *{transition:none !important; animation:none !important;}
   }
+
+  /* ---------- SPONSORS / DONATE GEAR ---------- */
+  .sponsors{background:var(--paper);}
+  .donate-gear{background:var(--deep); color:var(--paper);}
+  .donate-gear .section-head p{color:rgba(252,250,243,0.78);}
+  .donate-gear .eyebrow{color:var(--foam-accent);}
+  .donate-gear .eyebrow::before{background:var(--foam-accent);}
+
+  .info-copy p{
+    font-size:16.5px;
+    line-height:1.75;
+    color:#2C4744;
+    margin-bottom:16px;
+    max-width:760px;
+  }
+  .donate-gear .info-copy p{color:rgba(252,250,243,0.86);}
+
+  details.disclosure{
+    margin-top:20px;
+  }
+  details.disclosure summary{
+    list-style:none;
+    cursor:pointer;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:14px 24px;
+    border-radius:999px;
+    font-weight:700;
+    font-size:15px;
+    background:var(--gold);
+    color:var(--deep);
+    box-shadow:0 10px 24px rgba(223,162,79,0.35);
+    transition:transform .18s ease;
+  }
+  details.disclosure summary:hover{transform:translateY(-2px);}
+  details.disclosure summary::-webkit-details-marker{display:none;}
+  details.disclosure summary::marker{content:"";}
+  .form-embed{
+    margin-top:22px;
+    max-width:100%;
+    overflow-x:auto;
+    border-radius:16px;
+    background:#fff;
+    padding:10px;
+    box-shadow:var(--shadow);
+  }
+  .donate-gear .form-embed{background:rgba(252,250,243,0.06);}
+  .form-embed iframe{
+    display:block;
+    border:none;
+    max-width:100%;
+  }
+
+  .subsection{margin-top:56px;}
+  .subsection h3{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    font-weight:700;
+    margin-bottom:18px;
+    color:var(--deep);
+  }
+  .donate-gear .subsection h3{color:var(--paper);}
+
+  .business-grid{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+  }
+  .business-card{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    background:#fff;
+    border-radius:16px;
+    box-shadow:var(--shadow);
+    padding:18px 22px;
+  }
+  .business-card img{
+    width:64px;
+    height:64px;
+    border-radius:12px;
+    object-fit:cover;
+    flex-shrink:0;
+  }
+  .business-card .name{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:17px;
+    color:var(--deep);
+  }
+
+  .contribution-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+  }
+  .contribution-pill{
+    border:1.5px solid var(--line);
+    padding:12px 20px;
+    border-radius:999px;
+    font-size:14.5px;
+    font-weight:700;
+    color:var(--teal);
+    background:#fff;
+  }
+
+  @media (max-width:600px){
+    details.disclosure summary{width:100%; justify-content:center;}
+  }
 </style>
 </head>
 <body>
@@ -691,11 +801,13 @@
     </a>
     <nav>
       <ul>
+        <li><a href="#how">Learn How It Works</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">What's On Offer</a></li>
-        <li><a href="#how">How It Works</a></li>
         <li><a href="#winners">Winners</a></li>
         <li><a href="#join">Join Us</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#donate-gear">Donate Gear</a></li>
       </ul>
     </nav>
     <a href="https://www.facebook.com/profile.php?id=61570049143039" class="nav-cta" target="_blank" rel="noopener">Facebook Page</a>
@@ -708,13 +820,14 @@
     <div>
       <div class="eyebrow">FREE JUNIOR SEA FISHING · UNDER 16 · RUN BY JUNIORS</div>
       <h1>Lines in. Friends<br>gathered. <em>Personal bests</em><br>on the line.</h1>
-      <p class="lede">The official home of Guernsey's junior sea fishing competitions — organised by juniors, for juniors. Fish for fun, fish for glory, weigh in with your mates, and see your name on the board.</p>
+      <p class="lede">The official home of Guernsey's junior sea fishing competitions — organised by juniors, for juniors. Fish wherever you want, fish fairly, and log your catches.</p>
       <div class="btn-row">
-        <a href="#join" class="btn btn-primary">
+        <a href="#how" class="btn btn-primary">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0A3B37" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Join The Next Weigh-In
+          Learn How It Works
         </a>
-        <a href="#about" class="btn btn-ghost">How it started</a>
+        <a href="#join" class="btn btn-ghost">Join the League</a>
+        <a href="#sponsors" class="btn btn-ghost">Join Our Sponsors</a>
       </div>
       <div class="hero-stats">
         <div class="stat"><div class="num">70+</div><div class="lbl">Members &amp; growing</div></div>
@@ -748,6 +861,37 @@
   <svg class="wave-divider" viewBox="0 0 1440 90" preserveAspectRatio="none">
     <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,45 L1440,90 L0,90 Z" fill="#F5F1E4"></path>
   </svg>
+</section>
+
+
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how" id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">GETTING INVOLVED</div>
+      <h2>Learn How It Works</h2>
+      <p>No entry forms, no fees — just turn up, fish fair, and log your catch.</p>
+    </div>
+    <div class="how-list">
+      <div class="how-item">
+        <h3>Sign up free</h3>
+        <p>Register once to get your league membership card. No cost, no catch — just your name on the league.</p>
+      </div>
+      <div class="how-item">
+        <h3>Fish the window</h3>
+        <p>Catches count from 4pm Friday to 9pm Sunday, every weekend, and throughout school holiday periods, from anywhere around Guernsey's coastline.</p>
+      </div>
+      <div class="how-item">
+        <h3>Log your catch</h3>
+        <p>Submit your species and measurement/weight — solo or as part of your group — before the window closes.</p>
+      </div>
+      <div class="how-item">
+        <h3>Watch the board</h3>
+        <p>Results are posted after each competition, with winners called out across every prize category.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ================= ABOUT ================= -->
@@ -851,35 +995,6 @@
   </div>
 </section>
 
-<!-- ================= HOW IT WORKS ================= -->
-<section class="how" id="how">
-  <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">GETTING INVOLVED</div>
-      <h2>How a weekend competition works</h2>
-      <p>No entry forms, no fees — just turn up, fish fair, and log your catch.</p>
-    </div>
-    <div class="how-list">
-      <div class="how-item">
-        <h3>Sign up free</h3>
-        <p>Register once to get your league membership card. No cost, no catch — just your name on the roster.</p>
-      </div>
-      <div class="how-item">
-        <h3>Fish the window</h3>
-        <p>Catches count from 4pm Friday to 9pm Sunday, from anywhere around Guernsey's coastline.</p>
-      </div>
-      <div class="how-item">
-        <h3>Log your catch</h3>
-        <p>Submit your species and measurement — solo or as part of your group — before the window closes.</p>
-      </div>
-      <div class="how-item">
-        <h3>Watch the board</h3>
-        <p>Results are posted after each competition, with winners called out across every prize category.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ================= WINNERS ================= -->
 <section class="winners" id="winners">
   <div class="wrap">
@@ -973,18 +1088,77 @@
       </div>
       <div class="join-fact">
         <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-        <div><div class="t">Friday 4pm – Sunday 9pm</div><div class="d">This is the catch window for every weekend competition.</div></div>
+        <div><div class="t">Friday 4pm – Sunday 9pm</div><div class="d">This is the catch window for every weekend competition, except during school holiday periods.</div></div>
       </div>
       <div class="join-fact">
         <svg viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 12l4-4M3 12l4 4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><div class="t">Anywhere around the island</div><div class="d">Fish your favourite spot — shore, rocks or harbour.</div></div>
+        <div><div class="t">Anywhere around the island</div><div class="d">Fish your favourite spot — shore, rocks or harbour (where fishing is permitted).</div></div>
       </div>
       <div class="join-fact">
         <svg viewBox="0 0 24 24" fill="none"><path d="M20 7L9 18l-5-5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        <div><div class="t">100% free, always</div><div class="d">No entry fee, no membership cost — just turn up and fish.</div></div>
+        <div><div class="t">100% free, always</div><div class="d">No entry fee, no membership cost — just go to your favourite spot and fish.</div></div>
       </div>
 
       <a href="https://www.facebook.com/profile.php?id=61570049143039" target="_blank" rel="noopener" class="btn btn-primary">Message Us On Facebook</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SPONSORS ================= -->
+<section class="sponsors" id="sponsors">
+  <div class="wrap">
+    <div class="section-head info-copy">
+      <div class="eyebrow">SUPPORT THE LEAGUE</div>
+      <h2>Sponsors</h2>
+      <p>The Guernsey Junior Fishing League is always looking for sponsors. Every pound raised through sponsorship and donations is reinvested straight back into the league — most of it goes towards prizes for our members.</p>
+      <p>Prizes aren't only awarded to whoever catches the biggest or best fish. We also recognise members who show enthusiasm, commitment, great participation, and a positive attitude — because that's what keeps this league going.</p>
+      <details class="disclosure">
+        <summary>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.5 6.5L21 9l-5 4.5L17.5 20 12 16.5 6.5 20 8 13.5 3 9l6.5-.5L12 2Z" stroke="#0A3B37" stroke-width="2" stroke-linejoin="round"/></svg>
+          Become a Sponsor
+        </summary>
+        <div class="form-embed">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfJcPqG6ROfbNuV6cZwSanX8U0p7yLvrI_sNUwNW8gS6xqISg/viewform?embedded=true" width="640" height="1032" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </details>
+    </div>
+
+    <div class="subsection">
+      <h3>Businesses</h3>
+      <div class="business-grid">
+        <div class="business-card">
+          <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAEsASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwDxeiiivvT4wKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiuo+EtjZ6n8TvDenahbR3Npc6jFHNDIMq6k8gj0qZy5IuXYqMeaSj3OXor78Pwk+GhBH/CFaNz6QCvjz43eArj4feOLjS8O+m3GZ9PmbnfET90n+8p4P4HvXDhcxp4mXIlZnXiMDUoR5nqjhqKKK9A4gooPAya+tP2fPgrocXglNX8aaHbX+oaltmjguk3fZocfKMdmOcn8B2rmxWKhhoc0jfD4edeXLE+S6K+qf2ovAXg3w58Lm1HQvDenafefb4Y/Ogi2ttO7Iz6GvlajC4mOJhzxVgxFCVCfJJhRX2n8Ivhn4A1T4YeG9R1HwlpVzd3GnRSTTSQgs7FeST614V+1d4e0Pw18Q7Gw0DS7XTbZ9MSVooE2qXMkgLY9cAflWFDMIVqrpJO/+RrVwU6VJVG9DyGiitbwl4b1rxXrkOjaDYyXl5LztXhUXuzN0VR6mu+UlFXexyJNuyMmkLKOpA/Gvrn4d/s1eG9MgiuvGFzJrV7gFreJjHbIfTjDP9SQPavXNK8FeD9KhWLTvC+j2yr02Wcefzxk15NXOKUXaCv8AgelTyurJXk7H51BlPRgfxpa/RfU/B3hLU4TFf+GdHuUIwRJZxk/njNeUfED9m3wnq8Mlx4Wlk0G+xlY9xktmPoVPzL9VPHpSpZzSk7TTX4hUyqrFXi7nx/RW7448I6/4L1x9H8Q2LW1wBujccxzL/eRujD9R3xXrP7InhXw54o1PxFH4h0az1NLeGBoRcR7thLPnH1wPyr0K2IhTpOruvI4qVCVSoqezPCaK+uv2i/h54I0H4RavqmjeF9Msb2JoBHPDDtdczIDg+4JH418i1OFxUcTBzirDxGHlQnyyYUVveAfCmq+NfFNp4f0ePM85y8jD5IYx96RvYfqcDvX2lofwW+HGm6Ra2Evhiwv5IIwj3NzFuklbuzH1J/Ks8Xj6eGaUtWaYbB1MQm46I+D6K9v/AGmrzwBpF/8A8Ih4O8NaRb3sLBtQvYYRuiI5EKnse7Ht09ai/ZI8M6B4n8W61a+IdJtNThhsFkjS4TcFbzAMj8Kv62lQ9s4tIn6s3W9kmrnitFfUf7VXgXwf4a+GkGoaD4c0/TrttSiiMsEW1ihVyRn04H5V8uVeFxMcRDnirEYihKhPkkwpCQOpAr6K+CH7Pa6zp1v4i8cGeC1nUSW2mxsUeRDyGkbqoPZRg+pHSvojRPAvg3RbdYNM8L6RbKoxkWqFj9WIJP4muLEZtSpS5Yq7OujltSouZux+doIPQg0tfohrngPwXrcDQ6p4X0i4U9zaqrD6MACPwNeC/Fr9m1YLabVvAEsshQF30ud9xI/6ZOec/wCy3X17UqGb0ajtJcv5BWyyrBXjqfNNFPmikhmeGaN4pY2KujqQysDggg9CKZXrHnBRRRQAUUUUAFdh8Ev+Sv8AhP8A7CkP/oVcfXYfBL/kr/hP/sKQ/wDoVZV/4UvRmlH+JH1R+gdcF8dPAEHxB8ET6eiouqWuZ9PlPG2QD7hP91hwfwPau9rE8E+JtN8WaCmr6Y+Y/MeGWMn5opUYqyN7gj8QQe9fF05TptVI9D6upGM1yS6n513VvPaXUtrdQvDPC7RyxuMMjA4II9Qajr6O/a/+HH2S7Hj/AEi3xBOyx6oiDhJOiy/Q8KffB7mvA/DGiaj4k8QWWhaVD5t5eyiKJew9WPoAMkn0FfYYfEwrUlU+/wAj5avQlSqezZ6X+zF8Of8AhNPF41bU4N2h6S6yShh8s83VI/cfxN7YHevtaue+HXhPTvBPhCx8O6aMx26ZllIw00h5dz7k/kMDtU+ieJdN1jxBrWjWD+bLozxR3Tg/KJHBbYPcADPucdq+YxuIliqjktl+R9FhKEcPBRe7PNP2xf8Akjrf9hK3/wDZq+Ma+zv2xf8Akjrf9hK3/wDZq+Ma9vJ/93+b/Q8jNP4/yP0A+B3/ACR/wp/2C4f/AEEV84/tp/8AJUtO/wCwRH/6Nlr6O+B3/JH/AAp/2C4f/QRXzj+2n/yVLTv+wRH/AOjZa8/L/wDfX8zuxv8Aui+R4pYWlzqF/b2FlC091cyrFDGo5d2OAB+Jr7x+C3w6074eeFIrKJI5dUuFD6hdY5kk/ug/3F6Afj1NfOH7H3hyPWPidLq9xGHh0a1MyZGR5znYn5DefqBX1n4z1228MeFNT8QXYzDYWzzFc/eIHC/icD8a0zbESlNUI/0zPLKMYwdaRxvxn+Luh/Dm2W2aP+0damTdDZI+3avZ5G/hX9T29a+ZfEfx6+JmsXLPFri6VCT8sNjCqBR/vMCx/OvP/Ems6h4h1691vVZzNe3kpllYnoT0A9ABgAdgBWfXoYXLqVGK5ldnDiMfVqy912R6Vofx0+J+lXCyf8JI9+gPMV7Ckit+OAw/A19BfCX4/wDh7xXG1l4iEGgapFG0hMkv+jzKoyxRj0IAJ2n8Ca+M6Kuvl1CstrPuiaOOrUnvdeZ61+0T8V1+IWqxabpUCx6Hp8paCR4x5s74wXyeVXHRe/U9gO1/Yb/5DHin/r3tv/QpK+cK+j/2G/8AkMeKf+ve2/8AQpKxxtGNHBShDZW/NGmEqyq4qMpb/wDAPU/2qf8Akh2uf71v/wCj0r4k0+zutQv4LCxt5Li6uJFihijGWdicAAV9t/tU/wDJDtc/3rf/ANHpXJfssfCj+wbGPxr4htsardR/6DBIvNrEw++R2dh+Q47muLA4qOGwkpPe+n3I68Zh5V8Sortr97O4+A3wztfh34XCTrHNrd6A9/cDnB7RKf7q/qcn0xlftHfFOPwH4f8A7L0qZW8RahGRABz9mj6GUj17KO556A113xX8daZ8P/CU+tX5Ekx/d2dtuw1xKRwo9u5PYV8GeKdd1PxN4gvNd1i4Nxe3cm+Ruw9FUdlA4A9BWeBw0sXVdart+f8AwDTGYiOGpqlT3/IzpZJJZXllkaSR2LO7HJYk5JJ7k179+xD/AMjv4g/7Bqf+jRXz/Xqn7N3xA0L4e+JNV1DXkvGhurNYY/s0Qc7g4bkEjjFe1joSnh5Rirs8rBzUK0ZSeh7l+2d/ySW2/wCwtD/6BJXzv+z74btvFPxZ0bTb2NZLSJ2up0YZDrGNwU+xbaD7GvRP2h/jH4S8feBIdE0OPU1ukv47gm5twi7VVweQx5+YVw/7M2t22h/GXRprtxHDd+ZZlycANIuE/wDHgo/GuLC06lLBTTVnqdWInTqYuLTutD7kvLiGzs5rq4cRwwRtJIx6KqjJP5Cvjj4g/tEeNda1WZfDV2ND0tXIgWOJWmdezOzA4J9BjHv1r7E1Ozh1HTbrT7gEw3MLwyYPO1gQf0NfB3xP+FfirwDfTC9sJrrSgx8jUYELRMvbdj7jeoP4ZrgymFCU37S1+lzszOVaMVybdbHUeCv2ifHui3if21cRa/Y5/eRTxrHLjvtdQOfqCK+gdU+OPgm1+HSeL7e7Nw02YoNPyFuGnAyY2H8OMglumCCM5Gfhwc9KK9atllCrJO1vTqebSzCtTTV7+pr+M/EN94r8UX/iHUkgS6vZPMdYUCovGAAO+AByeT1NZFFFehGKiklscbbk7sKKKKYgooooAK7D4Jf8lf8ACf8A2FIf/Qq4+uw+CX/JX/Cf/YUh/wDQqyr/AMKXozSj/Ej6o/QOvjL4FfEc+B/ihqWn6lOV0LVb+SO43H5YJPMISX2HZvY57V9m1+bXiHnxBqY/6fJv/Q2r5/KqUa0akJbO36ntZlUlSlCcd1f9D9GtX0+x1nSbnTNQgS5s7uJopo25Dowwa8s+BXwbt/h7rOsateTR3t1LM0GnyY5itc5BPo7dD/u+5rL/AGUPiR/wknhw+E9XuN2raVGPIdz81xbDgH3ZOFPttPrXtWp31ppmnXGo386W9rbRNLNK5wEVRkk/hXFU9rhnKhff8Tsh7Kuo1uxwvx6+IUPw+8Ey3cLo2r3mYNPiPPz45kI/uqOfrgd682/YjmmudN8W3FxK8s0t7C8kjnLOxVyST6k14V8ZPHV38QPG1zrMm+Oyj/c2EDf8soQeMj+833j7nHavcv2G/wDkC+Kf+vq3/wDQGr0quE+r4GV/idr/AH7Hn08T7fGK2yvb7jqf2xf+SOt/2Erf/wBmr4xr7O/bF/5I63/YSt//AGavjGuvJ/8Ad/m/0ObNP4/yP0A+B3/JH/Cn/YLh/wDQRXzj+2n/AMlS07/sER/+jZa+jvgd/wAkf8Kf9guH/wBBFfOP7af/ACVLTv8AsER/+jZa8/L/APfX8zuxv+6L5HX/ALDUSf2b4qnwPMM9smfYK5/rXcftbXEsHwU1BIiQJrm3jfH93zAf6CvMP2INXSHxB4i0N2Aa5tormME9fLYq3/owV7l8d/D03if4Ua9pVrGZLryPPgUdWeNg4A9ztx+NTinyZhzS2uv0Hh1z4K0d7M+A6KKK+nPnwooooAK+j/2G/wDkMeKf+ve2/wDQpK+cK+j/ANhv/kMeKf8Ar3tv/QpK4Mz/AN1l8vzR2YD/AHiP9dD6W1zSNP1uxFjqlslzbebHKYn5VmRg65HcbgDj2q9Xnv7RGsal4f8AhTqWs6RdPa31pNbSQyL2PnpwR3BGQR3BNWPgx8R9N+Ivhhb2DZb6nbgJf2meYn/vD1RuoP4dRXy/sZul7Tpex9D7WCq+z62Pkv8AaH8R+Jdf+JeoQ+IrWWw/s9zBaWTHKwxZ4YHoxcYYsOvHYCvOq+4f2gvhVbfEHQvtlgscPiGyQ/ZZTwJl6mJz6Hsex9ia+JL21ubG8msryCS3uYJDHLFIuGRgcEEetfT5diKdWkoxVmuh89jqE6VRuWt+pDRRRXoHGFKrMrBlYqwOQQcEH1pKKAPq/wCBnx/07UbK20DxzdLZajGBHFqMhxFcjoN5/gf3PB9ulfQCtDc24ZWjmhkXIIIZWU/oRX5oV1Xgn4ieM/BrKuga9c29uDk2sh8yA/8AAGyB+GDXiYrKFN81J28uh62HzNwXLUV/M+vfHXwO+H/ioSTHShpN6+T9p0/ERz6lPuN+Wfevmj4ufBTxP4Bjk1FSuraIp5vIEIaIdvMTnb9QSPpXq3w2/aZtL26h0/xvpsdgXIX+0LUkwg+roclR7gn6Cvoh1tr2zKOsVxbTx4IIDJIjD8iCDXHHEYrAyUamq8/0Z1OhhsZFyho/63R+aNFd58evBsPgf4lX+kWaldPmVbqzB/hjfPy/8BYMPoBXB19JTqKpBTjszwZwcJOL3QUUUVZIUUUUAFdh8Ev+Sv8AhP8A7CkP/oVcfXYfBL/kr/hP/sKQ/wDoVZV/4UvRmlH+JH1R+gdfm14h/wCRg1P/AK/Jv/Q2r9Ja/NrxD/yMGp/9fk3/AKG1eJknxT+X6nrZvtD5/oT+Etf1Hwv4ksdf0mXy7uzlEiejDureqkZB+tezftEfGi18YeGNM0Dw3JJHa3cKXOqZ4Kv2tz64Iyex+X3rwSivYqYanUqRqSWqPLhXnCDgnowr6l/Yb/5Avin/AK+rf/0Bq+Wq+pf2G/8AkC+Kf+vq3/8AQGrmzX/dZfL8zoy7/eF8/wAjqf2xf+SOt/2Erf8A9mr4xr7O/bF/5I63/YSt/wD2avjGs8n/AN3+bLzT+P8AI/QD4Hf8kf8ACn/YLh/9BFfOP7af/JUtO/7BEf8A6Nlr6O+B3/JH/Cn/AGC4f/QRXzj+2n/yVLTv+wRH/wCjZa8/L/8AfX8zuxv+6L5HmXwx8VT+CvHWmeI4QzpbS4njXrJCw2uv1wTj3Ar9BNI1Gy1bS7bU9OuEuLS6iWWGVDkMrDINfmtXsPwA+M9z4CkGh62st34dlfcNvMlmx6sg7qepX8R3B78zwTrpThuvxOLL8WqL5J7M3v2jPgpqGl6rd+K/CVi93pVwxmu7SBcvaueWZVHWM9ePu89q8A9R6da/SLw5ruj+ItLj1PQ9SttQtJB8skL5A9iOoPseaxfEfw38CeIbhrnWPCumXM7ctL5Ox2+rLgn8a48Nm0qUeSqr2+86q+Wqo+ek7XPz3JA6nFeqfBn4L6/47vIr7UIZ9L8Pg5kunTa84/uxA9c/3ug9+lfV2h/C34eaLcLcad4Q0qOZTlZJIvNZT7F84rpNY1TTNE02TUNVvraws4Vy8szhEUfU/wAqqvnDmuWjGzZNHK1F81V6Hwd8XfhzrPw68Qmxv1M9hMSbK9VcJMvofRx3X8RxXrX7Df8AyGPFP/Xvbf8AoUlc9+0Z8ZrfxvF/wjXh6ADRIpRJJdTR/vLh16FAeUUevU+w4PQ/sN/8hfxT/wBe9t/6FJXTiJVZYBuqrPT80c9CNOOMSpu6/wCAep/tU/8AJDtc/wB63/8AR6V8e/D/AMXav4I8T22vaNLtmiO2WJj8k8Z+9Gw9D+hwe1fYX7VP/JDtc/3rf/0elfDtTlEVPDyjLa/6IrM5ONdNdv1Z+iHw68Y6P458L2+u6PLlJPlmhY/PBIPvI3uP1GD3ryz9pv4QjxPZyeLvDdt/xPLZM3Vug/4/IwOo/wCmijp6jj0r54+DvxE1P4deKE1G13z6fOQl/Z7sCZPUejr1B/Doa+7PDOuaZ4k0K11rR7pLmyukDxyL+oI7EHgjsRXn4ijUy+spw26f5M7aNWGNpOE9/wCtUfm6QQSCCCOoPaivpT9qX4QeQ1z488MWv7skyaraRr90951A7f3h+PrXzXX0OGxEMRDnieJXoSoT5ZBXonwV+FWsfEfU2dH+xaLbSBbu9Iyc9diDu2D9BnJ7A+d13nwX+JOp/DjxGbyFWutMucLfWe7HmKOjL6OOcHvyD7PE+19k/ZfEKh7P2i9psew/HL9n+3i0O11T4fWDedYwCO6sQxZ7lR/y0UnrJ6jv25GD8ySxyQyvDLG8ciEq6OpDKR1BB5Br9FPBXi7w/wCMtHTVfD+oxXcDAb1BxJE39116qfr+FQeJvAfg3xLP9o13w1pt9P8A89pIB5h+rDBP514WGzSdD3Kybt957FfLoVvfpO35H56W0E11cx2ttDJPPKwSOKNSzOx6AAck1+hnwv03UNH+HXh/StVJ+3WunwxTgnO1go+XPt0/CneGfA/g/wANS+doXhvTbCbGPNigHmf99Hn9ab8QfGugeB9Ck1XXbxIlAPkwKQZZ2/uovc+/Qd6yxuNeMcYQj/ma4TCLCpznI+ZP21Z4JPiXpcMZBlh0lfNx2zK5A/L+deFVu+PvE994x8X6h4j1EBZryTKxg5ESAYRB7AAD361hV9DhaTpUYwe6R4eIqKpVlNdQoooroMQooooAKt6PqV7o+q2uq6bObe8tJRLBKACUcdDg8fnVSik0mrME7ao9E/4Xf8U/+huuP/AaH/4ivPp5ZJ55J5W3SSuXdvVick/nTKKiFKFP4Ipehc6k5/E7hRRRWhAV0vgzx54t8HQ3MPhrWZNPjumV5gkSNvKggH5lPqa5qiplCM1aSuhxk4u8XY67xZ8SvHHivSTpPiDX5b6yMiyeU0MajcvQ5VQe9cjRRShCMFaKshynKbvJ3O50b4u/EbR9KtdK03xPPb2drEIoIhBEQiAYAyVJ/OsDxf4p1/xdqUeo+I9Re/u44hCkjIqkICSBhQB1J/OsWipjRpxlzRik/Qcqs5LlbdgooorUg0vD2va34evftmhateabcd3t5Sm72IHBHsa9J0r9on4nWUSxzX+n34AxuubNd35oVrySisamHpVPjimaQrVKfwyaPXtS/aM+Jt3EY4bvTLHI+9b2QLD/AL7LV5v4m8TeIfE10LnxBrN7qUo+758pZV/3V6L+AFZNFFPD0qbvCKQ516lT4pNhXQeDPGnifwdLcy+GtWk097pVWYpGjbwucfeB6ZNc/RWkoxmrSV0Zxk4u6Z2fiX4pePvEmjTaNrfiKa8sJ9plhaGJQ21gw5VQeoBrjKKKUKcYK0VYcpym7ydwrqPB3xB8Z+ELKay8Oa9cWFtNJ5jxKiOu7GMgMDg/TriuXopzhGatJXQoylF3i7Hob/G34pOpR/Fk7KwwQbaEgj/vivPpXaWV5WChnYsdqhRk+gHA+gptFTClCn8CS9Cp1Jz+J3CiiitCC9oes6toV+t/oupXen3S9JbeUo2PQ46j2NenaT+0V8TbGFYpr7TtQCjAa5sxu/EoVzXkdFY1MPSq/HFM0hWqU/hk0es6v+0P8Tr+FootRsdPDDBa1s1DfgX3YrzPWtW1TW797/WNRutQun6zXEpdvpk9B7CqVFFOhSpfBFIJ1qlT4m2FFFFbGYUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFABRRRQAUUUUAFFFFAH//Z" alt="Micks Fishing logo">
+          <div class="name">Micks Fishing</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection">
+      <h3>Significant Contributions</h3>
+      <div class="contribution-list">
+        <span class="contribution-pill">Matt Mahy</span>
+        <span class="contribution-pill">David Cains</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DONATE GEAR ================= -->
+<section class="donate-gear" id="donate-gear">
+  <div class="wrap">
+    <div class="section-head info-copy">
+      <div class="eyebrow">GIVE GEAR, GIVE ACCESS</div>
+      <h2>Donate Gear</h2>
+      <p>We're always looking for donated rods, reels, and fishing tackle. Every piece of kit donated helps support the Rod Loan Scheme at Micks, which lets junior anglers borrow equipment and get involved in fishing even if they don't own their own gear.</p>
+      <details class="disclosure">
+        <summary>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="#0A3B37" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Donate Here
+        </summary>
+        <div class="form-embed">
+          <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeSp80VdkhmflwWBA-tuI18c5Qlqa2GfiW5NpAiD3FKec4ukg/viewform?embedded=true" width="640" height="878" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+      </details>
     </div>
   </div>
 </section>
@@ -999,15 +1173,20 @@
       <div class="foot-links">
         <div class="foot-col">
           <h4>Explore</h4>
+          <a href="#how">Learn How It Works</a>
           <a href="#about">About Us</a>
           <a href="#services">What's On Offer</a>
-          <a href="#how">How It Works</a>
           <a href="#winners">Winners</a>
+        </div>
+        <div class="foot-col">
+          <h4>Get Involved</h4>
+          <a href="#join">Join The League</a>
+          <a href="#sponsors">Sponsors</a>
+          <a href="#donate-gear">Donate Gear</a>
         </div>
         <div class="foot-col">
           <h4>Connect</h4>
           <a href="https://www.facebook.com/profile.php?id=61570049143039" target="_blank" rel="noopener">Facebook Page</a>
-          <a href="#join">Join The League</a>
         </div>
       </div>
     </div>

@@ -678,6 +678,27 @@
     gap:10px;
     padding-top:22px;
   }
+  .foot-credit{
+    margin-top:22px;
+    padding-top:18px;
+    border-top:1px solid rgba(252,250,243,0.14);
+    text-align:center;
+    font-family:'Space Mono',monospace;
+    font-size:12px;
+    letter-spacing:0.04em;
+    color:rgba(252,250,243,0.55);
+  }
+  .foot-credit a{
+    color:rgba(252,250,243,0.75);
+    text-decoration:none;
+    font-weight:700;
+    border-bottom:1px solid rgba(252,250,243,0.3);
+    transition:color .2s ease, border-color .2s ease;
+  }
+  .foot-credit a:hover{
+    color:var(--foam-accent);
+    border-color:var(--foam-accent);
+  }
 
   /* ---------- RESPONSIVE ---------- */
   @media (max-width:960px){
@@ -1427,6 +1448,9 @@
     <div class="foot-bottom">
       <span>© 2026 Guernsey Junior Fishing League. Organised by juniors, for juniors.</span>
       <span>Free to join · Free to enter · Every weekend</span>
+    </div>
+    <div class="foot-credit">
+      Designed by Canvas Media (Guernsey)
     </div>
   </div>
 </footer>

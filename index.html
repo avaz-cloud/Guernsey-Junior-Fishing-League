@@ -239,19 +239,20 @@ section{padding:92px 0;position:relative;}
 .timeline{position:relative;margin-top:30px;}
 .line-svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;pointer-events:none;z-index:0;}
 .line-svg path{fill:none;stroke:var(--channel);stroke-width:1.6;stroke-linecap:round;opacity:.75;}
-.timeline-items{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;position:relative;z-index:1;align-items:start;}
-.timeline-item{position:relative;padding:26px 22px 24px;background:var(--paper);border:1.5px solid var(--rule);border-radius:3px;
+.timeline-items{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;position:relative;z-index:1;align-items:start;}
+.timeline-item{position:relative;padding:24px 18px 22px;background:var(--paper);border:1.5px solid var(--rule);border-radius:3px;
 }
-.timeline-item:nth-child(2){margin-top:70px;}
-.timeline-item:nth-child(3){margin-top:140px;}
-.timeline-item:nth-child(4){margin-top:210px;}
+.timeline-item:nth-child(2){margin-top:56px;}
+.timeline-item:nth-child(3){margin-top:112px;}
+.timeline-item:nth-child(4){margin-top:168px;}
+.timeline-item:nth-child(5){margin-top:224px;}
 .timeline-item .bob{position:absolute;top:-9px;left:24px;width:16px;height:16px;border-radius:50%;background:var(--brass);border:3px solid var(--paper);box-shadow:0 0 0 1.5px var(--deep);}
 .timeline-item .num{
   font-family:'Caveat',cursive;font-weight:700;font-size:64px;line-height:.8;color:var(--channel);
   display:block;margin-bottom:12px;transform:rotate(-4deg);transform-origin:left bottom;
 }
-.timeline-item h3{font-size:21px;margin-bottom:8px;text-transform:uppercase;}
-.timeline-item p{font-size:14.5px;line-height:1.6;color:#2C4744;margin:0;}
+.timeline-item h3{font-size:19px;margin-bottom:8px;text-transform:uppercase;}
+.timeline-item p{font-size:14px;line-height:1.6;color:#2C4744;margin:0;}
 
 /* ---------- ABOUT ---------- */
 .about{background:var(--sand);overflow:hidden;}
@@ -525,6 +526,12 @@ footer .wrap{position:relative;z-index:1;}
   .navbar-top{position:relative;z-index:70;}
   .cast-line{display:none;}
 }
+@media (max-width:1100px) and (min-width:961px){
+  .timeline-items{grid-template-columns:repeat(3,1fr);}
+  .timeline-item:nth-child(n){margin-top:0;}
+  .timeline-item:nth-child(2),.timeline-item:nth-child(5){margin-top:60px;}
+  .timeline-item:nth-child(3){margin-top:120px;}
+}
 @media (max-width:960px){
   .hero-grid,.about-grid,.join-grid,.sponsor-grid,.donate-grid{grid-template-columns:1fr;}
   .hero-grid{padding-bottom:140px;}
@@ -708,25 +715,31 @@ footer .wrap{position:relative;z-index:1;}
           <span class="bob"></span>
           <span class="num">1.</span>
           <h3>Sign up free</h3>
-          <p>Register once to get your league membership card. No cost, no catch — just your name on the league.</p>
+          <p>Register once to get your league membership card, then collect it from Micks Fishing. No cost, no catch — just your name on the league.</p>
         </div>
-        <div class="timeline-item" data-reveal style="--d:.1s">
+        <div class="timeline-item" data-reveal style="--d:.08s">
           <span class="bob"></span>
           <span class="num">2.</span>
+          <h3>Get your number</h3>
+          <p>Each Friday you'll receive a unique number for that weekend's competition from WhatsApp.</p>
+        </div>
+        <div class="timeline-item" data-reveal style="--d:.16s">
+          <span class="bob"></span>
+          <span class="num">3.</span>
           <h3>Fish the window</h3>
           <p>Catches count from 4pm Friday to 9pm Sunday, every weekend, and throughout school holiday periods, from anywhere around Guernsey's coastline.</p>
         </div>
-        <div class="timeline-item" data-reveal style="--d:.2s">
-          <span class="bob"></span>
-          <span class="num">3.</span>
-          <h3>Log your catch</h3>
-          <p>Submit your species and measurement/weight — solo or as part of your group — before the window closes.</p>
-        </div>
-        <div class="timeline-item" data-reveal style="--d:.3s">
+        <div class="timeline-item" data-reveal style="--d:.24s">
           <span class="bob"></span>
           <span class="num">4.</span>
+          <h3>Log your catch</h3>
+          <p>Submit your species and measurement/weight through the WhatsApp group before the window closes.</p>
+        </div>
+        <div class="timeline-item" data-reveal style="--d:.32s">
+          <span class="bob"></span>
+          <span class="num">5.</span>
           <h3>Watch the board</h3>
-          <p>Results are posted after each competition, with winners called out across every prize category.</p>
+          <p>Results are posted after each competition, with winners called out across the prize categories for that weekend.</p>
         </div>
       </div>
     </div>
